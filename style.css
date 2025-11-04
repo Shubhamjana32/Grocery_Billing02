@@ -1,0 +1,222 @@
+/* --- Base Styles (Mobile-First Default) --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 10px; 
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 15px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 1.8em;
+}
+
+h2 {
+    color: #3498db;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-top: 20px; 
+    font-size: 1.3em; 
+}
+
+/* --- Form and Inputs --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+.checkbox-group input[type="checkbox"] {
+    transform: scale(1.2); 
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.checkbox-group label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+    padding-right: 5px;
+}
+
+/* Make buttons full width and better targets on mobile */
+.btn {
+    display: block; 
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.add-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+.add-btn:hover {
+    background-color: #27ae60;
+}
+
+.calculate-btn {
+    background-color: #9b59b6;
+    color: white;
+    margin-bottom: 15px; 
+}
+.calculate-btn:hover {
+    background-color: #8e44ad;
+}
+
+.clear-btn {
+    background-color: #e74c3c;
+    color: white;
+    margin-top: 20px;
+}
+.clear-btn:hover {
+    background-color: #c0392b;
+}
+
+
+/* --- History Table (Mobile Responsive Fix) --- */
+#historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    display: block; 
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; 
+}
+
+#historyTable th, #historyTable td {
+    border: 1px solid #ddd;
+    padding: 8px; 
+    text-align: left;
+    font-size: 0.9em;
+}
+
+#historyTable th {
+    background-color: #34495e;
+    color: white;
+}
+
+#historyTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* --- Settlement Results --- */
+.result-box, .instructions-box {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px dashed #3498db;
+    overflow-x: auto; 
+}
+
+.result-box h3, .instructions-box h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+.result-box p {
+    margin: 5px 0;
+    font-size: 1em;
+    word-break: break-word;
+}
+
+.result-box .positive {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.result-box .negative {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.instructions-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 30px 0;
+}
+
+/* --- Desktop/Tablet styles (Min-width media query) --- */
+@media (min-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 30px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-top: 25px;
+    }
+
+    /* Undo full-width buttons for desktop */
+    .btn {
+        display: inline-block;
+        width: auto; 
+        padding: 10px 15px;
+    }
+    
+    .calculate-btn {
+        margin-bottom: 0; 
+    }
+    
+    /* Restore normal table display on desktop */
+    #historyTable {
+        display: table;
+        overflow-x: visible;
+        white-space: normal;
+    }
+
+    #historyTable th, #historyTable td {
+        padding: 10px;
+        font-size: 1em;
+    }
+}
